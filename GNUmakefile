@@ -17,7 +17,8 @@ else
 	LD=ld
 endif
 
-#LDFLAGS += -static # -mwindows
+#LDFLAGS += -static
+#LDFLAGS += -mwindows
 LDLIBS  += -lreadline -lhistory -ltermcap
 LDLIBS += -lwinmm #-lwsock32 -lole32 -luuid -lcomctl32 -loleaut32
 
