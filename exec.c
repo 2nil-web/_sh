@@ -16,7 +16,7 @@
    command.  Return a NULL pointer if NAME isn't a command name. */
 COMMAND *find_command(char *name)
 {
-  register int i;
+  int i;
 
   for(i=0; commands[i].name || commands[i].func || commands[i].doc; i++)
     if (commands[i].name && strcmp(name, commands[i].name) == 0)
@@ -120,7 +120,7 @@ int run_out_sh(char *cmd)
 /* Execute a command line. */
 int execute_line(char *line)
 {
-  register int i;
+  int i;
   COMMAND *command;
   sDllFunc *dllf;
   char *word, *full_cmd, *p=NULL;

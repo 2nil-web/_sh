@@ -511,11 +511,11 @@ size_t add2struct(void **ptr, eType t, int isPointer, int isConstant, char *str_
     if (t == DL_CHAR || t == DL_UCHAR) {
       char *s=strdup(sval);
 //      printf("add2 [%s] %p\n", s, s);
-      memcpy((*ptr+curr_offset), &s, sizeof(void **));
+      memcpy(((char *)(*ptr)+curr_offset), &s, sizeof(void **));
 //      printf("add2bis [%s] %p\n", *(char **)(*ptr+curr_offset), *(char **)(*ptr+curr_offset));
     }
   } else {
-    svaltomem(*ptr+curr_offset, t, sval);
+    svaltomem((char *)(*ptr)+curr_offset, t, sval);
 //    printf("svtm %d\n", *d);
   }
 

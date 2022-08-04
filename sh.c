@@ -8,7 +8,7 @@
 #include "util.h"
 #include "exec.h"
 
-char *prmpt="_sh>";
+char *prmpt=(char *)"_sh>";
 
 
 void runfile(char *filename)

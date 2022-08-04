@@ -115,7 +115,7 @@ void ShError(const char *fmt, ...)
 /* Strip whitespace from the left start of STRING.  Return a pointer into STRING. */
 char *lws(char *string)
 {
-  register char *s;
+  char *s;
 
   for(s=string; isspace(*s); s++) ;
 
@@ -125,7 +125,7 @@ char *lws(char *string)
 /* Strip whitespace from the start and end of STRING.  Return a pointer into STRING. */
 char *ws(char *string)
 {
-  register char *s, *t;
+  char *s, *t;
 
   for(s=string; isspace(*s); s++) ;
   if (*s == 0) return s;

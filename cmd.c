@@ -61,7 +61,7 @@ void disp_cmd_help(int i, int prev, int lng)
 /* Print out help for ARG, or for all of the commands if ARG is not present. */
 int com_help(char *arg, int lng)
 {
-  register int i;
+  int i;
   int printed=0;
 
   if (*arg) {
