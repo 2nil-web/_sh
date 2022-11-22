@@ -11,8 +11,7 @@
 char *prmpt=(char *)"_sh>";
 
 
-void runfile(char *filename)
-{
+void runfile(char *filename) {
   char s[PATH_MAX];
   FILE *fp=fopen(filename, "r");
 
@@ -30,8 +29,7 @@ void runfile(char *filename)
 int keep=0;
 int not_c_or_f=1;
 
-int parse_args(int argc, char **argv)
-{
+int parse_args(int argc, char **argv) {
   int opt;
   while((opt=getopt(argc, argv, "c:f:kp:s")) != EOF) switch(opt) {
   case 's' : {
@@ -57,8 +55,7 @@ int parse_args(int argc, char **argv)
   return 1;
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
   parse_args(argc, argv);
   if (keep || not_c_or_f)
     exec_cmds(wipe_suffix(basename(argv[0])), prmpt);
