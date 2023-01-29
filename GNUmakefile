@@ -1,13 +1,13 @@
 
 ARCH=x86_64-w64-mingw32-
 
-CFLAGS += -Wall
+CFLAGS += -Wall -Wextra -pedantic
 
 #GCC=gcc
 #CFLAGS += -std=gnu18
 
 GCC=g++
-CFLAGS += -std=gnu++20
+CFLAGS += -std=gnu++23
 
 ifdef ARCH
 	CC=$(ARCH)${GCC}
@@ -17,9 +17,9 @@ else
 	LD=ld
 endif
 
-#LDFLAGS += -static
+LDFLAGS += -static
 #LDFLAGS += -mwindows
-LDLIBS  += -lreadline -lhistory -ltermcap
+LDLIBS  += -lreadline -lhistory -ltermcap.dll
 LDLIBS += -lwinmm #-lwsock32 -lole32 -luuid -lcomctl32 -loleaut32
 
 SRCS=$(wildcard *.c)
@@ -41,7 +41,7 @@ rclean :
 ifneq ($(MAKECMDGOALS),rclean)
 # Régles pour construire les .exe d'après les .o et .c
 %.exe: %.c
-	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+	$(LINK.c) $(LOADLIBES) $(LDLIBS) $^ -o $@
 
 %.exe: %.o
 	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
