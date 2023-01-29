@@ -10,7 +10,6 @@
 
 char *prmpt=(char *)"_sh>";
 
-
 void runfile(char *filename) {
   char s[PATH_MAX];
   FILE *fp=fopen(filename, "r");
