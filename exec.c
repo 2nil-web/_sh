@@ -60,7 +60,7 @@ char *command_generator(const char *text, int state)
    the word to complete.  We can use the entire contents of rl_line_buffer
    in case we want to do some simple parsing.  Return the array of matches,
    or NULL if there aren't any. */
-char **_sh_completion(const char *text, int start, int end)
+char **_sh_completion(const char *text, int start, int )
 {
   char **matches;
 

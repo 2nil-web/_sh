@@ -171,7 +171,7 @@ int defldouble(char *arg) { return defvar(DL_LDOUBLE, arg); }
   printf("sizeof(Struct { %s, %s} )=%lu\n", #Tvar1, #Tvar2, (long unsigned int)sizeof(sTvar)); \
 }
 
-int old_defstruct(char *arg)
+int old_defstruct(char *)
 {/*
   typedef struct sTest {
     char c;
@@ -200,7 +200,7 @@ int old_defstruct(char *arg)
   return 1;
 }
 
-int defstruct(char *arg)
+int defstruct(char *)
 {
 
   return 1;

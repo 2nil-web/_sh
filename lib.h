@@ -4,8 +4,8 @@
 
 typedef void (*DLLFUNC)(void *);
 
-#define FUNCTYPE DLLFUNC
-//#define FUNCTYPE FARPROC
+//#define FUNCTYPE DLLFUNC
+#define FUNCTYPE FARPROC
 
 typedef struct sDllFunc {
   char *name;

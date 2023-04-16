@@ -22,9 +22,9 @@
 
 
 /* Pour indiquer un titre */
-int fUL(char *s) { return 0; }
+int fUL(char *) { return 0; }
 /* Pour indiquer une remarque */
-int fREM(char *s) { return 0; }
+int fREM(char *) { return 0; }
 
 /* Pour indiquer que le commentaire est identique au précédent */
 #define sPrec "idprev"
@@ -134,7 +134,7 @@ int com_env(char *arg)
   return 0;
 }
 
-int com_hist(char *arg)
+int com_hist(char *)
 {
   HISTORY_STATE *hs;
   int i=0;
@@ -159,7 +159,7 @@ int com_prmpt(char *arg)
 }
 
 /* The user wishes to quit using this program.  Just set DONE non-zero. */
-int com_quit(char *arg)
+int com_quit(char *)
 {
   extern int done;
   done=1;
@@ -167,7 +167,7 @@ int com_quit(char *arg)
 }
 
 /* Print out the current working directory. */
-int com_pwd(char *ignore)
+int com_pwd(char *)
 {
   char dir[PATH_MAX], *s;
 

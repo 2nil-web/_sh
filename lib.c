@@ -217,7 +217,7 @@ int setlib(char *arg)
   return 0;
 }
 
-int lfunc(char *dum)
+int lfunc(char *)
 {
   if (currlib >= 0 && currlib < ndll) {
     listfunc(&dl[currlib]);
@@ -227,7 +227,7 @@ int lfunc(char *dum)
   return 0;
 }
 
-int llib(char *dum)
+int llib(char *)
 {
   if (ndll > 0) {
     int i;
@@ -470,7 +470,7 @@ size_t StructArg(char *args, void **pp)
 /* Appel de fonction en 32 bits */
 /* L'appel d'une fonction en stdcall reviens à lui passer un seul paramètre
  * d'un type structuré constitué des paramétres tels que déclarés pour cette fonction */
-int callfunc(sDllFunc *dllf, char *args)
+int callfunc(sDllFunc *dllf, char *)
 {
   if (dllf && dllf->func) {
 #ifdef WIN64
